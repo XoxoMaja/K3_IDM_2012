@@ -12,12 +12,17 @@ void setup(){
 void draw() {
               //Grey level
   background (24,24,24);
- 
-  x=x+1; 
+// increase x axis counter
+  x = x + 1; 
+  
+  // check if object left screen
+  if (x > width){
+  x=-100;
+  }
   translate (x,0);
   
   //     R   G    B
-  fill (255, 40, 20);
+  fill (255,10,5);
   
   //M
   rect (10,10,20,100);
@@ -28,7 +33,7 @@ void draw() {
   
   //F
   noStroke();
-  fill (0, 255,0);
+  fill (x);
   rect (90,10,20,100);
   rect (90,10,60,20);
   rect (90,40,50,20);
